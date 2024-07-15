@@ -5,6 +5,7 @@ import userRouter from './routes/user.route.js';
 import authRouter from './routes/auth.route.js'
 import listingRouter from './routes/listing.route.js'
 import path from 'path';
+import cors from 'cors';
 
 import cookieParser from 'cookie-parser';
 
@@ -17,6 +18,12 @@ mongoose.connect(process.env.MONGODB).then(()=>{
 const __dirname = path.resolve();
 
 const app = express()
+
+app.use(cors({
+    origin:['https://deploy-mern-1whq.vercel.app'],
+    methods:["POST","GET"],
+    credentials:true
+}))
 
 app.use(express.json())
 
