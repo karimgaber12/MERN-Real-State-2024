@@ -20,7 +20,7 @@ const __dirname = path.resolve();
 const app = express()
 
 app.use(cors({
-    origin:['https://deploy-mern-1whq.vercel.app'],
+    origin:['https://deploy-mern-real-state-2024-fod7dsa.app'],
     methods:["POST","GET"],
     credentials:true
 }))
